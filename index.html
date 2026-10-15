@@ -11,77 +11,54 @@
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #ffffff;
         }
 
-        /* Barra superior (Header) */
+        /* Barra superior (Header) idéntica a la imagen */
         .header {
-            background-color: #191919;
-            height: 60px;
+            background-color: #1a1a1a;
+            height: 65px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
             padding: 0 20px;
             width: 100%;
         }
 
-        .logo-container {
+        /* El logo ahora es un enlace a duoc.html */
+        .logo-link {
+            text-decoration: none;
             display: flex;
             align-items: center;
         }
 
         .logo-text {
-            color: white;
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-right: 5px;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: -1px;
             display: flex;
             align-items: center;
         }
 
-        /* Simulación del escudo de DuocUC */
+        /* Escudo de DuocUC */
         .logo-crest {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.7);
-            margin-left: 4px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .logo-crest::after {
-            content: "UC";
-            font-size: 10px;
-            color: rgba(255,255,255,0.7);
-            font-weight: normal;
-        }
-
-        /* Menú Hamburguesa */
-        .menu-icon {
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 20px;
-            width: 30px;
-        }
-
-        .menu-icon div {
-            width: 100%;
-            height: 3px;
-            background-color: white;
-            border-radius: 1px;
+            width: 38px;
+            height: 44px;
+            margin-left: 8px;
+            /* Escudo simulado en base64 para evitar archivos externos */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 110'%3E%3Cpath d='M50 5 C20 5 10 20 10 50 C10 80 40 105 50 105 C60 105 90 80 90 50 C90 20 80 5 50 5 Z' fill='none' stroke='white' stroke-width='3'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M50 20 L50 80 M20 50 L80 50' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         /* Contenedor Principal */
         .main-content {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             padding-top: 30px;
+            padding-left: 40px; 
         }
 
         /* Caja del reCAPTCHA */
@@ -111,59 +88,62 @@
             align-items: center;
         }
 
-        /* Checkbox que redirige */
+        /* Contenedor del Checkbox interactivo */
         .checkbox-container {
             padding-top: 10px;
             cursor: pointer;
+            width: 40px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
 
+        /* Cuadrado gris oscuro del reCAPTCHA */
         .checkbox {
             width: 28px;
             height: 28px;
-            border: 2px solid #c1c1c1;
+            border: 2.5px solid #555;
             border-radius: 2px;
             background-color: white;
-            margin-right: 12px;
-            transition: border-color 0.2s;
+            transition: all 0.2s ease;
         }
 
         .checkbox-container:hover .checkbox {
-             border-color: #b2b2b2;
+             border-color: #333;
+        }
+
+        /* Animación de Carga (Spinner) */
+        .loading-spinner {
+            width: 28px;
+            height: 28px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4285F4; /* Color azul de Google */
+            border-radius: 50%;
+            background-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .recaptcha-text {
             font-size: 14px;
-            color: #222;
+            color: #000;
             padding-top: 10px;
+            margin-left: 2px;
         }
 
-        /* Logo derecho de reCAPTCHA */
-        .recaptcha-logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .recaptcha-logo {
-            width: 28px;
-            height: 28px;
-            margin-bottom: 2px;
-        }
-
-        .recaptcha-brand {
-            font-size: 10px;
-            color: #555;
-        }
-
-        /* Texto inferior (Enterprise) */
+        /* Texto inferior */
         .recaptcha-footer {
-            font-size: 9px;
+            font-size: 10px;
             color: #555;
             position: absolute;
             bottom: 6px;
             left: 12px;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
         .recaptcha-footer a {
@@ -177,14 +157,10 @@
 
     <!-- Encabezado oscuro de Duoc UC -->
     <header class="header">
-        <div class="logo-container">
+        <!-- El logo redirige a duoc.html -->
+        <a href="duoc.html" class="logo-link">
             <span class="logo-text">DuocUC <div class="logo-crest"></div></span>
-        </div>
-        <div class="menu-icon">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        </a>
     </header>
 
     <!-- Contenido con el Widget -->
@@ -192,34 +168,38 @@
         <div class="recaptcha-box">
             
             <div class="recaptcha-main">
-                <!-- Sección izquierda: Checkbox y texto (Hacer clic aquí redirige a verifico.html) -->
+                <!-- Sección izquierda: Checkbox y texto -->
                 <div class="recaptcha-left">
-                    <div class="checkbox-container" onclick="window.location.href='verifico.html'">
-                        <div class="checkbox"></div>
+                    <div class="checkbox-container" id="recaptcha-click-area">
+                        <div class="checkbox" id="recaptcha-checkbox"></div>
                     </div>
+                    <!-- Texto visible en la imagen -->
                     <span class="recaptcha-text">No soy un robot</span>
-                </div>
-                
-                <!-- Sección derecha: Logo de reCAPTCHA -->
-                <div class="recaptcha-logo-container">
-                    <!-- Icono SVG idéntico al de reCAPTCHA -->
-                    <svg class="recaptcha-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#4285F4" d="M24,4 C30.6,4 36.4,7.3 39.8,12.4 L33.4,17 C31.3,13.6 27.9,11.3 24,11.3 C17,11.3 11.3,17 11.3,24 C11.3,24.8 11.4,25.6 11.6,26.3 L4.6,28.8 C4.2,27.3 4,25.7 4,24 C4,13 13,4 24,4 Z"/>
-                        <path fill="#34A853" d="M39.8,12.4 L44.2,7 C44.2,7 44.5,12 44.5,12 L39.8,12.4 Z"/>
-                        <path fill="#4285F4" d="M43.7,21 C43.9,22 44,23 44,24 C44,35 35,44 24,44 C17.3,44 11.4,40.6 8,35.4 L14.5,30.8 C16.5,34.4 20,36.7 24,36.7 C31,36.7 36.7,31 36.7,24 C36.7,23.3 36.6,22.6 36.4,21.8 L43.7,21 Z"/>
-                        <path fill="#34A853" d="M8,35.4 L3.8,40.8 C3.8,40.8 3.5,35.8 3.5,35.8 L8,35.4 Z"/>
-                    </svg>
-                    <span class="recaptcha-brand">reCAPTCHA</span>
                 </div>
             </div>
 
-            <!-- Texto inferior -->
+            <!-- Texto inferior Enterprise visible en la imagen -->
             <div class="recaptcha-footer">
                 Este sitio supera la <a href="#">cuota gratuita de <br>reCAPTCHA Enterprise</a>
             </div>
 
         </div>
     </main>
+
+    <script>
+        // Lógica de validación y redirección
+        document.getElementById('recaptcha-click-area').addEventListener('click', function() {
+            var checkboxElement = document.getElementById('recaptcha-checkbox');
+            
+            // Reemplaza el cuadrado por el círculo de carga (spinner)
+            checkboxElement.className = 'loading-spinner';
+            
+            // Simula el tiempo de carga (1.5 segundos) y luego redirige
+            setTimeout(function() {
+                window.location.href = 'verifico.html';
+            }, 1500);
+        });
+    </script>
 
 </body>
 </html>
