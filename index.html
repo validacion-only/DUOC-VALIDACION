@@ -34,7 +34,7 @@
 
         /* Estilos para la imagen del logo (duoc.jpg) */
         .logo-img {
-            height: 44px; /* Ajusta este valor si tu imagen se ve muy grande o pequeña */
+            height: 44px; 
             width: auto;
             object-fit: contain;
         }
@@ -47,17 +47,17 @@
             padding-left: 40px; 
         }
 
-        /* Caja del reCAPTCHA */
+        /* Caja del reCAPTCHA corregida */
         .recaptcha-box {
             background-color: #f9f9f9;
             border: 1px solid #d3d3d3;
             border-radius: 3px;
             width: 304px;
             height: 78px;
-            padding: 0 12px 0 12px;
+            padding: 12px 12px; /* Ajuste de espaciado interno */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             box-shadow: 0px 0px 4px rgba(0,0,0,0.08);
             position: relative;
         }
@@ -65,8 +65,7 @@
         .recaptcha-main {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-top: -8px;
+            /* Se eliminó el margen negativo que causaba la superposición */
         }
         
         .recaptcha-left {
@@ -74,15 +73,13 @@
             align-items: center;
         }
 
-        /* Contenedor del Checkbox interactivo */
+        /* Contenedor del Checkbox con más separación */
         .checkbox-container {
-            padding-top: 10px;
             cursor: pointer;
-            width: 40px;
-            height: 38px;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
+            margin-right: 12px; /* Separa el cuadro de la letra "No soy un robot" */
         }
 
         /* Cuadrado gris oscuro del reCAPTCHA */
@@ -104,7 +101,7 @@
             width: 28px;
             height: 28px;
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #4285F4; /* Color azul de Google */
+            border-top: 3px solid #4285F4;
             border-radius: 50%;
             background-color: transparent;
             animation: spin 1s linear infinite;
@@ -118,16 +115,14 @@
         .recaptcha-text {
             font-size: 14px;
             color: #000;
-            padding-top: 10px;
-            margin-left: 2px;
         }
 
-        /* Texto inferior */
+        /* Texto inferior separado del cuadro */
         .recaptcha-footer {
             font-size: 10px;
             color: #555;
             position: absolute;
-            bottom: 6px;
+            bottom: 8px; /* Lo mantiene pegado abajo sin chocar arriba */
             left: 12px;
             line-height: 1.3;
         }
