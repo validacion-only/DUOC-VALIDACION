@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duoc UC</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #1a1a1a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .logo-image {
+            height: 30px; /* Adjust as needed */
+        }
+
+        .menu-icon {
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 50px; /* Space from header */
+            height: calc(100vh - 60px); /* Adjust based on header height */
+        }
+
+        /* reCAPTCHA Container Styles */
+        .recaptcha-container {
+            background-color: #f9f9f9;
+            border: 1px solid #d3d3d3;
+            border-radius: 3px;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            width: 300px; /* Approximate width */
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.1);
+        }
+
+        .recaptcha-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .recaptcha-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #c1c1c1;
+            border-radius: 2px;
+            background-color: white;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .checkbox:hover {
+             border-color: #b2b2b2;
+        }
+
+        .recaptcha-text {
+            font-size: 14px;
+            color: #222;
+        }
+
+        .recaptcha-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recaptcha-logo {
+            width: 30px; /* Adjust size */
+            height: 30px;
+            margin-bottom: 5px;
+        }
+
+        .recaptcha-brand {
+            font-size: 10px;
+            color: #555;
+        }
+
+        .recaptcha-footer {
+            font-size: 10px;
+            color: #555;
+            line-height: 1.3;
+        }
+
+        .recaptcha-footer a {
+            color: #555;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <span class="logo-text">DuocUC</span>
+            <!-- You would replace this with the actual Duoc UC crest image -->
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' stroke='white' stroke-width='2' fill='none'/><text x='50' y='55' font-size='12' text-anchor='middle' fill='white'>Crest</text></svg>" alt="Crest" class="logo-image">
+        </div>
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- reCAPTCHA Mockup -->
+        <div class="recaptcha-container">
+            <div class="recaptcha-main">
+                <div class="recaptcha-left">
+                    <div class="checkbox"></div>
+                    <span class="recaptcha-text">No soy un robot</span>
+                </div>
+                <div class="recaptcha-logo-container">
+                    <!-- Placeholder for reCAPTCHA logo -->
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><path d='M25 5 A20 20 0 1 0 45 25 H35 A10 10 0 1 1 25 15 V5 Z' fill='%234285F4'/><path d='M25 5 V15 A10 10 0 0 1 35 25 H45 A20 20 0 0 0 25 5 Z' fill='%23DB4437'/><path d='M15 25 A10 10 0 0 1 25 15 V5 A20 20 0 0 0 5 25 Z' fill='%23F4B400'/></svg>" alt="reCAPTCHA" class="recaptcha-logo">
+                    <span class="recaptcha-brand">reCAPTCHA</span>
+                </div>
+            </div>
+            <div class="recaptcha-footer">
+                Este sitio supera la <a href="#">cuota gratuita de reCAPTCHA Enterprise</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
